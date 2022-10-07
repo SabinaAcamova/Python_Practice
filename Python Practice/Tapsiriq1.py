@@ -14,8 +14,10 @@ while (True):
     if choice == 0:
        print("You have been logged out. Thank you!") 
        break
-
-    input_pin = int(input("Zehmet olmasa Pininizi daxil edin: "))
+   # try:
+       input_pin = int(input("Zehmet olmasa Pininizi daxil edin: "))\
+   # except ValueError:
+      #  print("Zəhmət olmasa inputları doğru daxil ediniz.")
     if input_pin == pin:
         if choice == 1:
            print("Balansiniz: ",balance)
@@ -38,8 +40,7 @@ while (True):
             continue
     else:
         print("Yanlis PIN")
-      
-
+     
 
 
 
