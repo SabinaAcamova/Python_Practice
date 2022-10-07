@@ -1,33 +1,58 @@
+pin = 1312
+balance = 13000
+print("Welcome")
+choice = 9
 
-print("Welcome to the Bank")
-p=int(input("Enter your pin number: "))
-money = 13000
-if(p == 1312):
-  print("1-Balans Sorğulama")
-  print("2-Pul Yatırmaq")
-  print("3-Pul Çekmek")
-  c = int(input("Proses secin: "))
-else:
-    print("Wrong password")
-     
-  if (processes== "q"): 
-  print("Hesabdan cixis")
-  break
-  elif(c==1):
-  print("Bakiyeniz : ",m)
-  elif (c == 2):
-    miqdar = int(input("Yatırmak istediginiz miqdar: "))
+while (True):
+    print("0.Cixis")
+    print("1.Balansi goster")
+    print("2.Pul Yatirma")
+    print("3.Pul Cixarma")
 
-    bakiye += miqdar
-    print("Bakiyeniz {} tldir".format(bakiye))
-  elif (c == 3):
-    miktar = int(input("Cekmek istediginiz miqdar: "))
-    if (bakiye - miqdar < 0 ):
-        print("Bu qeder pul ceke bilmezsiniz")
-        print("Bakiyeniz {} tldir".format(bakiye))
-        continue
-    bakiye -= miktar
-    print("Bakiyeniz {} tldir".format(bakiye))
-else:
-   print("Zehmet olmasa dogru prosesi girin!.")
+    choice = int(input("Proses nomresini daxil edin "))
+
+    if choice == 0:
+       print("You have been logged out. Thank you!") 
+       break
+
+    input_pin = int(input("Zehmet olmasa Pininizi daxil edin: "))
+    if input_pin == pin:
+        if choice == 1:
+           print("Balansiniz: ",balance)
+           continue
+        if choice == 2:
+           miqdar = int(input("Yatırmak istediginiz miqdar: "))
+           balance += miqdar
+           print("Bakiyeniz {} tldir".format(balance))
+           continue
+        if choice == 3:
+           cix_miqdar = int(input("Cekmek istediginiz miqdar: "))
+           if (balance - cix_miqdar < 0 ):
+                print("Bu qeder pul ceke bilmezsiniz")
+                print("Bakiyeniz {} tldir".format(balance))
+                continue
+           balance -= cix_miqdar
+           print("Bakiyeniz {} tldir".format(balance))
+        else:
+            print("Yanlis Proses")
+            continue
+    else:
+        print("Yanlis PIN")
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
