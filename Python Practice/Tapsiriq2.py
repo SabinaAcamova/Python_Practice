@@ -1,8 +1,5 @@
 class isciler():
-    
     def __init__(self,ad,soyad,no,maas):
-        
-        print("İşçilər classının init funksiyası...")
         
         self.ad=ad
         self.soyad=soyad
@@ -13,7 +10,6 @@ class isciler():
     def information(self):
         print("""
          
-              
               Ad:{}
               Soyad:{}
               No:{}
@@ -42,6 +38,11 @@ class Proqramist(isciler):
       self.dil.append(dil)
 
       print("Dil elave olundu...")
+    def maas_artir(self,zam_miq):
+          
+          print("Maaş artırıldı")
+          
+          self.maas += zam_miq  
 class direktorlar(isciler):
     def __init__(self,ad,soyad,no,maas,isci_sayi):
         super().__init__(ad,soyad,no,maas) 
@@ -64,6 +65,9 @@ class direktorlar(isciler):
         print("Maaş artırıldı")
         
         self.maas += zam_miq   
+    def isci_artir(self,art_sayi):
+        self.isci_sayi+=art_sayi
+        
 class investorlar(isciler):
     def __init__(self,ad,soyad,no,maas,invst):
         super().__init__(ad,soyad,no,maas) 
@@ -84,14 +88,17 @@ class investorlar(isciler):
          self.invst += invst_m
 isci1=isciler("Walter", "White", 3646474, 10000)
 isci1.information()  
+proqramist1= Proqramist("Samir","Quliyev",41893127,30000,["Matlab","Fortran","C++","C#","Java","Python"],7)
+proqramist1.information()
+proqramist1.dil_elave_et("HTML")
+proqramist1.maas_artir(1000)
+proqramist1.information() 
 direktor1=direktorlar("Sabina", "Ajamova", 720990, 13131313,13)
 direktor1.information()
 direktor1.maas_artir(10000)
+direktor1.isci_artir(10)
 direktor1.information()
-proqramist1= Proqramist("Samir","Quliyev",41893127,30000,["Matlab","Fortran","C++","C#","Java","Python"],7)
-proqramist1.dil_elave_et("HTML")
-proqramist1.information() 
-inv1=investorlar("Walter", "White", 3646474, 10000,1000)
+inv1=investorlar("Gunel", "Humbatova", 3646474, 10000,1000)
 inv1.information() 
 inv1.invst_miqdari(1000)
 inv1.information()
